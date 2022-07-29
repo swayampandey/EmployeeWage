@@ -5,17 +5,19 @@ public class EmployeeWage {
 	public static final int FullTime=2;
 	public static final int RatePerHour=20;
 	public static final int WorkingDays=20;
+	public static final int MaxHoursInMonth=100;
 	
 	public static void main(String[] args) {
 		
 		System.out.println("Welcome to Employee Wage Computation Program");
 		System.out.println("********************************************");
 		/*
-		 * Refactoring  UC5
+		 * Refactoring  UC6
 		 */
 		// variables
-		int EmpHours=0, EmpWage=0, TotalEmpWage=0;
-		for(int day=0; day<WorkingDays; day++) {
+		int EmpHours=0, TotalEmpHours=0, TotalWorkingDays=0;
+		while(TotalEmpHours<=MaxHoursInMonth && TotalWorkingDays<WorkingDays ) {
+			TotalWorkingDays++;
 			int isPresent= (int)Math.floor(Math.random()*10)%3;
 			switch(isPresent) {
 			
@@ -28,11 +30,11 @@ public class EmployeeWage {
 			default:
 				EmpHours=0;
 				}
-			EmpWage= EmpHours*RatePerHour;
-			TotalEmpWage +=EmpWage;
-			System.out.println("Employee Wage = " +EmpWage);
+			TotalEmpHours +=EmpHours;
+			System.out.println("Day : "+ TotalWorkingDays + " Employee Hour : " +EmpHours);
 		}
-			System.out.println("Total Employee Wage  = " +TotalEmpWage);
+			int TotalEmpWage= TotalEmpHours*RatePerHour;
+			System.out.println("Total Employee Wage : " +TotalEmpWage);
 		
 		}
 		
