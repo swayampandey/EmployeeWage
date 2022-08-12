@@ -4,10 +4,10 @@ public class EmployeeWage {
 	
 	public static final int PartTime = 1;
 	public static final int FullTime = 2;
-	private static  String company;
-	private static  int RatePerHour;
-	private static  int WorkingDays;
-	private static  int MaxHoursInMonth;
+	private final  String company;
+	private final  int RatePerHour;
+	private final  int WorkingDays;
+	private final  int MaxHoursInMonth;
 	
 	
 	// creating constructor
@@ -23,7 +23,7 @@ public class EmployeeWage {
 	static void display() {
 
 		System.out.println("Welcome to Employee Wage Computation\nProgram for multiple companies");
-		System.out.println("********************************************");
+		System.out.println("-------------------------------------------------------");
 		
 
 		
@@ -51,6 +51,7 @@ public class EmployeeWage {
 			System.out.println("Day : "+ TotalWorkingDays + " Employee Hour : " +EmpHours);	
 			
 		}
+		System.out.println("----------------------------------------------------------");
 		return TotalEmpHours * RatePerHour;
 		
 	}
@@ -64,9 +65,9 @@ public class EmployeeWage {
 		EmployeeWage Reliance = new EmployeeWage("Reliance", 25, 18, 150);
 		
 		
-		System.out.println("Total EmpWage for Company " + dMart.company + " is " +dMart.computeEmpWage());
+		System.out.println("Total EmpWage for Company " + dMart.company + " is : " +dMart.computeEmpWage());
 		System.out.println("----------------------------------------------------------");
-		System.out.println("Total EmpWage for Company " + Reliance.company + " is : " +dMart.computeEmpWage());
+		System.out.println("Total EmpWage for Company " + Reliance.company + " is : " + Reliance.computeEmpWage());
 			
 	
 	
